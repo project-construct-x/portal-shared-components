@@ -33,7 +33,7 @@ export const MainHeaderTitle = ({
       {title && (
         <Typography
           sx={{
-            fontFamily: 'LibreFranklin-Light',
+            fontFamily: 'Montserrat-Light',
             fontWeight: 600,
             paddingBottom: '34px',
           }}
@@ -46,7 +46,6 @@ export const MainHeaderTitle = ({
       {subTitle && (
         <Typography
           sx={{
-            fontFamily: 'LibreFranklin-Light',
             width: `${subTitleWidth}px`,
           }}
           variant={subTitleTextVariant}

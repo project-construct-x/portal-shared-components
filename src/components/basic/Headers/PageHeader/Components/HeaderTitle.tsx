@@ -27,8 +27,8 @@ export const HeaderTitle = ({ title }: PageHeaderProps) => {
       {title && (
         <Typography
           sx={{
+            fontFamily: 'Montserrat-Light',
             paddingTop: '36px',
-            fontFamily: 'LibreFranklin-Light',
           }}
           variant="h3"
         >

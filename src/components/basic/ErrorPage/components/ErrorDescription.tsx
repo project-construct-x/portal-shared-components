@@ -36,36 +36,26 @@ export const ErrorDescription = ({
     >
       {header && (
         <Typography
+          variant="h3"
           sx={{
-            fontFamily: 'LibreFranklin-Light',
-            fontWeight: '600',
+            fontFamily: 'Montserrat-Light',
+            fontWeight: 600,
             marginBottom: '10px !important',
           }}
-          variant="h3"
         >
           {header}
         </Typography>
       )}
 
-      {title && (
-        <Typography
-          sx={{
-            fontFamily: 'LibreFranklin-Light',
-          }}
-          variant="body1"
-        >
-          {title}
-        </Typography>
-      )}
+      {title && <Typography variant="body1">{title}</Typography>}
 
       {title && description && (
         <Typography
+          variant="body1"
           sx={{
-            fontFamily: 'LibreFranklin-Light',
             width: '640px',
             paddingTop: '20px !important',
           }}
-          variant="body1"
         >
           {description}{' '}
           <span style={{ borderBottom: '1px solid gray' }}>
