@@ -52,7 +52,7 @@ export const CardImage = ({
 
   const sx = {
     container: {
-      normal: {},
+      normal: { width: '90%' },
       medium: { paddingTop: 3, textAlign: 'center' },
       small: { paddingTop: 3, textAlign: 'center' },
     },

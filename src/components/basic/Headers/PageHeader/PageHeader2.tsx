@@ -18,14 +18,15 @@
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
 
-import { Box } from '@mui/material'
+import { Box, useTheme } from '@mui/material'
+// import { mainNavigationHeight } from '../../MainNavigation'
 import DefaultPageHeaderImage from '../../../../assets/logo/default.jpg'
 import { HeaderSubtractOption1 } from './Components/HeaderSubtractOption1'
 import { HeaderSubtractOption2 } from './Components/HeaderSubtractOption2'
 import { HeaderSubtractOption3 } from './Components/HeaderSubtractOption3'
 import { HeaderTitle } from './Components/HeaderTitle'
 
-export interface PageHeaderProps {
+export interface PageHeaderProp {
   children?: React.ReactNode
   title?: string
   topPage?: boolean
@@ -41,48 +42,56 @@ export interface PageHeaderProps {
   imagePath?: string
 }
 
-export const PageHeader = ({
+export const PageHeader2 = ({
   children,
   title,
-  headerHeight = 314,
+  topPage = false,
+  // headerHeight = 314,
   hasSubtract = true,
   subtractOption = 'Option1',
-  background = 'LinearGradient4',
+  background = 'Image',
   imagePath,
-}: PageHeaderProps) => {
-  // const { palette } = useTheme()
+}: PageHeaderProp) => {
+  const { palette } = useTheme()
+  // const hasChildren = !!children
+  // const getTop = (): number => (hasChildren ? 73 : 153)
+  // const getNotTop = () => (hasChildren ? 0 : 68)
+  // const getSpacingTop = () => (hasChildren ? 0 : 12)
+  // const top = topPage ? getTop() : getNotTop()
+  // const height = topPage ? headerHeight + mainNavigationHeight : headerHeight
+  //
 
   const backgroundStyle = () => {
     if (background === 'LinearGradient1') {
       return {
-        background: 'linear-gradient(152.33deg, #F4F3F3 4.24%, #818386 72.17%)',
+        direction: 152.33,
+        colorFrom: '#F4F3F3 4.24%',
+        colorTo: '#818386 72.17%',
       }
-    }
-
-    if (background === 'LinearGradient2') {
+    } else if (background === 'LinearGradient3') {
       return {
-        background:
-          'linear-gradient(145.91deg, #F0F2F5 18.42%, #B4BBC3 79.14%)',
+        direction: 292.62,
+        colorFrom: '#FF782C -16.38%',
+        colorTo: '#FFB326 82.22%',
       }
-    }
-
-    if (background === 'LinearGradient3') {
+    } else if (background === 'LinearGradient4') {
       return {
-        background:
-          'linear-gradient(292.62deg, #FF782C -16.38%, #FFB326 82.22%)',
+        direction: 111.81,
+        colorFrom: '#9EABA9 41.97%',
+        colorTo: '#B6A763 72.9%',
       }
-    }
-
-    if (background === 'LinearGradient4') {
+    } else if (background === 'LinearGradient2') {
       return {
-        background: 'linear-gradient(111.81deg, #F4E7D4 41.97%, #EC9C49 72.9%)',
+        css: 'linear-gradient(145.91deg, #F0F2F5 18.42%, #B4BBC3 79.14%)',
       }
-    }
-
-    return {
-      background: imagePath
-        ? `url(${imagePath}) center/cover no-repeat`
-        : `url(${DefaultPageHeaderImage}) center/cover no-repeat`,
+    } else {
+      return {
+        css: imagePath
+          ? `url(${imagePath}) center/cover no-repeat`
+          : `url(${DefaultPageHeaderImage}) center/cover no-repeat`,
+        height: '200px',
+        marginTop: '0px',
+      }
     }
   }
 
@@ -90,52 +99,48 @@ export const PageHeader = ({
     <Box
       sx={{
         width: '100%',
-        minHeight: headerHeight,
+        height: '200px  ',
+        marginTop: '0px',
         position: 'relative',
-        ...backgroundStyle(),
-        display: 'flex',
-        flexDirection: 'column',
+        background: backgroundStyle().css,
       }}
     >
-      {/* Breadcrumb / Top Bar */}
       {children && (
         <Box
           sx={{
             display: 'flex',
             alignItems: 'center',
-            height: 80,
-            background:
-              'linear-gradient(292.62deg, #EADCC6  -16.38%, #E28F3E  82.22%)',
+            height: '80px',
+            backgroundColor: palette.background.background13,
+            position: 'relative',
+            top: topPage ? '85px' : '0',
           }}
         >
           <Box
             sx={{
-              maxWidth: 1200,
-              px: 2.5,
-              mx: 'auto',
+              maxWidth: '1200px',
               width: '100%',
+              margin: '0 auto',
+              padding: '0 20px',
             }}
           >
             {children}
           </Box>
         </Box>
       )}
-
-      {/* Title Section */}
       <Box
         sx={{
-          maxWidth: 1200,
-          px: 2.5,
-          mx: 'auto',
-          pt: 1,
+          maxWidth: '1200px',
+          padding: '0px 20px',
+          margin: '0px auto',
+          paddingTop: '0px !important',
+          marginTop: '0px !important',
           position: 'relative',
           zIndex: 1,
         }}
       >
         <HeaderTitle title={title} />
       </Box>
-
-      {/* Decorative Subtract Shape */}
       {subtractOption === 'Option1' && (
         <HeaderSubtractOption1 hasSubtract={hasSubtract} />
       )}

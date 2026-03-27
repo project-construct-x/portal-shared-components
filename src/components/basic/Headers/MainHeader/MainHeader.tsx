@@ -28,6 +28,7 @@ export interface MainHeaderProps {
   subTitle?: string
   subTitleWidth?: number | string
   headerHeight?: number
+  marginTop?: number
   background?:
     | 'LinearGradient1'
     | 'LinearGradient2'
@@ -79,7 +80,8 @@ export const MainHeader = ({
   title,
   subTitle,
   subTitleWidth,
-  headerHeight = 645,
+  headerHeight = 200,
+  marginTop = 12,
   background = 'LinearGradient1',
   imagePath,
   titleTextVariant,
@@ -97,8 +99,8 @@ export const MainHeader = ({
     if (background === 'LinearGradient1') {
       return {
         direction: 152.33,
-        colorFrom: '#adb9c7 4.24%',
-        colorTo: '#e4ebf3 72.17%',
+        colorFrom: '#F4F3F3 44.24%',
+        colorTo: '#818386 32.17%',
       }
     } else if (background === 'LinearGradient3') {
       return {
@@ -127,6 +129,7 @@ export const MainHeader = ({
       sx={{
         width: '100%',
         height: `${headerHeight}px`,
+        marginTop: `${marginTop}px`,
         position: 'relative',
         background: `linear-gradient(${backgroundstyle().direction}deg, ${
           backgroundstyle().colorFrom

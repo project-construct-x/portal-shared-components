@@ -23,19 +23,7 @@ import { createTheme } from '@mui/material/styles'
 import type {} from '@mui/x-data-grid/themeAugmentation'
 
 const getFontFamily = (name: string): string =>
-  [
-    `"${name}"`,
-    '-apple-system',
-    'BlinkMacSystemFont',
-    '"Segoe UI"',
-    'Roboto',
-    '"Helvetica Neue"',
-    'Arial',
-    'sans-serif',
-    '"Apple Color Emoji"',
-    '"Segoe UI Emoji"',
-    '"Segoe UI Symbol"',
-  ].join(',')
+  [`"${name}"`, 'Montserrat-Light'].join(',')
 
 const breakpoints = {
   xs: 0,
@@ -206,114 +194,114 @@ export const paletteDefinitions = {
 const palette = paletteDefinitions
 
 export const typographyDefinitions = {
-  fontFamily: getFontFamily('LibreFranklin'),
+  fontFamily: getFontFamily('Montserrat-Light'),
   htmlFontSize: 16,
   pxToRem: (px: number) => `${px / 16}rem`,
   allVariants: {
     color: palette.text.primary,
   },
   h1: {
-    fontFamily: getFontFamily('LibreFranklin-Medium'),
+    fontFamily: getFontFamily('Montserrat-Light'),
     fontSize: 56,
     lineHeight: 68 / 56,
     letterSpacing: 0,
   },
   h2: {
-    fontFamily: getFontFamily('LibreFranklin-Medium'),
+    fontFamily: getFontFamily('Montserrat-Light'),
     fontSize: 36,
     lineHeight: 44 / 36,
     letterSpacing: 0,
   },
   h3: {
-    fontFamily: getFontFamily('LibreFranklin-SemiBold'),
+    fontFamily: getFontFamily('Montserrat-Light'),
     fontSize: 24,
     lineHeight: 36 / 24,
     letterSpacing: 0,
   },
   h4: {
-    fontFamily: getFontFamily('LibreFranklin-SemiBold'),
+    fontFamily: getFontFamily('Montserrat-Light'),
     fontSize: 18,
     lineHeight: 28 / 18,
     letterSpacing: 0,
   },
   h5: {
-    fontFamily: getFontFamily('LibreFranklin-SemiBold'),
+    fontFamily: getFontFamily('Montserrat-Light'),
     fontSize: 16,
     lineHeight: 24 / 16,
     letterSpacing: 0,
   },
   body1: {
-    fontFamily: getFontFamily('LibreFranklin-Light'),
+    fontFamily: getFontFamily('Montserrat-Light'),
     fontSize: 18,
     lineHeight: 28 / 18,
     letterSpacing: 0,
   },
   body2: {
-    fontFamily: getFontFamily('LibreFranklin-Light'),
+    fontFamily: getFontFamily('Montserrat-Light'),
     fontSize: 16,
     lineHeight: 24 / 16,
     letterSpacing: 0,
   },
   body3: {
-    fontFamily: getFontFamily('LibreFranklin-Light'),
+    fontFamily: getFontFamily('Montserrat-Light'),
     fontSize: 14,
     lineHeight: 20 / 14,
     letterSpacing: 0,
   },
   label1: {
-    fontFamily: getFontFamily('LibreFranklin-Medium'),
+    fontFamily: getFontFamily('Montserrat-Light'),
     fontSize: 18,
     lineHeight: 28 / 18,
     letterSpacing: 0,
   },
   label2: {
-    fontFamily: getFontFamily('LibreFranklin-Medium'),
+    fontFamily: getFontFamily('Montserrat-Light'),
     fontSize: 16,
     lineHeight: 24 / 16,
     letterSpacing: 0,
   },
   label3: {
-    fontFamily: getFontFamily('LibreFranklin-Medium'),
+    fontFamily: getFontFamily('Montserrat-Light'),
     fontSize: 14,
     lineHeight: 20 / 14,
     letterSpacing: 0,
   },
   label4: {
-    fontFamily: getFontFamily('LibreFranklin-Medium'),
+    fontFamily: getFontFamily('Montserrat-Light'),
     fontSize: 12,
     lineHeight: 16 / 12,
     letterSpacing: 0,
   },
   label5: {
-    fontFamily: getFontFamily('LibreFranklin-SemiBold'),
+    fontFamily: getFontFamily('Montserrat-Light'),
     fontSize: 11,
     lineHeight: 16 / 11,
     letterSpacing: 0,
     color: palette.text.secondary,
   },
   caption1: {
-    fontFamily: getFontFamily('LibreFranklin'),
+    fontFamily: getFontFamily('Montserrat-Light'),
     fontSize: 18,
     lineHeight: 28 / 18,
     letterSpacing: 0,
     color: palette.text.tertiary,
   },
   caption2: {
-    fontFamily: getFontFamily('LibreFranklin'),
+    fontFamily: getFontFamily('Montserrat-Light'),
     fontSize: 16,
     lineHeight: 24 / 16,
     letterSpacing: 0,
     color: palette.text.tertiary,
   },
   caption3: {
-    fontFamily: getFontFamily('LibreFranklin'),
+    fontFamily: getFontFamily('Montserrat-Light'),
     fontSize: 14,
     lineHeight: 20 / 14,
     letterSpacing: 0,
     color: palette.text.tertiary,
   },
   helper: {
-    fontFamily: getFontFamily('LibreFranklin'),
+    fontFamily: getFontFamily('Montserrat-Light'),
     fontSize: 12,
     lineHeight: 16 / 12,
     letterSpacing: 0,
@@ -530,7 +518,7 @@ export const theme = createTheme({
           overflow: 'hidden',
         },
         columnHeaders: {
-          fontFamily: getFontFamily('LibreFranklin-SemiBold'),
+          fontFamily: getFontFamily('Montserrat-Light'),
           backgroundColor: palette.background.background03,
         },
         columnHeader: {

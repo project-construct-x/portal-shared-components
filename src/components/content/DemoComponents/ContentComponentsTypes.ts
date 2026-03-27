@@ -18,6 +18,7 @@
  ********************************************************************************/
 
 export interface CardDetailsProps {
+  imageType: string
   title?: string
   description?: string
   imagePath?: string
